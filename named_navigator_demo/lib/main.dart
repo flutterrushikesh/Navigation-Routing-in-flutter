@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:named_navigator_demo/Screens/screen1.dart';
+import 'package:named_navigator_demo/Screens/screen2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,11 @@ class MyApp extends StatelessWidget {
           context,
         ) {
           return const Screen1();
+        },
+        "screen2": (
+          context,
+        ) {
+          return const Screen2();
         }
       },
       home: const HomeScreen(),
@@ -49,7 +55,9 @@ class HomeScreen extends StatelessWidget {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('screen2');
+              },
               child: const Text("Screen2"),
             ),
             const SizedBox(
