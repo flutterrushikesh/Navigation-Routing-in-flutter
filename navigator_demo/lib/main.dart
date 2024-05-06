@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:navigator_demo/Screens/screen1.dart';
+import 'package:navigator_demo/Screens/screen2.dart';
+import 'package:navigator_demo/Screens/screen3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return Screen1();
+                      return const Screen1();
                     },
                   ),
                 );
@@ -47,15 +49,33 @@ class HomeScreen extends StatelessWidget {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
-              child: const Text("Screen1"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const Screen2();
+                    },
+                  ),
+                );
+              },
+              child: const Text("Screen2"),
             ),
             const SizedBox(
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
-              child: const Text("Screen1"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const Screen3();
+                    },
+                  ),
+                );
+              },
+              child: const Text("Screen3"),
             ),
             const SizedBox(
               height: 20,

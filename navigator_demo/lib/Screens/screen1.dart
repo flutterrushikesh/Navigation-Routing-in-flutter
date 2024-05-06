@@ -9,7 +9,7 @@ class Screen1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Screen1"),
-        backgroundColor: Colors.blue.shade100,
+        backgroundColor: Colors.blue.shade200,
         centerTitle: true,
         // automaticallyImplyLeading: false,
       ),
@@ -22,7 +22,7 @@ class Screen1 extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return Screen2();
+                    return const Screen2();
                   },
                 ),
               );
@@ -33,7 +33,9 @@ class Screen1 extends StatelessWidget {
             height: 20,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             child: const Text("Prev screen(HS)"),
           ),
         ],
